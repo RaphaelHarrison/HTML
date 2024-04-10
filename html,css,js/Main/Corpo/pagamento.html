@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .payment-form {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .payment-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .payment-form input[type="text"] {
+            padding: 10px;
+            width: calc(100% - 20px);
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .payment-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+
+        .payment-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .finish-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .finish-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="payment-form">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-01" required>
+
+            <label for="payment-method">Forma de pagamento</label>
+            <div class="payment-images">
+                <img src="image/picpay.png" alt="Visa">
+                <img src="image/nubank.png" alt="Mastercard">
+                <img src="american-express.png" alt="American Express">
+                <img src="paypal.png" alt="PayPal">
+            </div>
+        </div>
+        
+        <button class="finish-button" onclick="finishPayment()">Finalizar compra</button>
+    </div>
+
+    <script>
+        function finishPayment() {
+            // Your finish payment logic goes here
+            alert('Payment completed!');
+        }
+    </script>
+</body>
+</html>
